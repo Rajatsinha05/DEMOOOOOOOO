@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useDispatch, useSelector } from 'react-redux'
+import { UserSignup } from '../Redux/action'
 function Signup() {
   
     const [name,setName] = useState('')
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
-     
+    const val = useSelector(store=>store)
+    console.log(val)
+    const dispatch = useDispatch()
     const handleSubmit = (e)=>{
         e.preventDefault()
         let obj = {
@@ -16,6 +20,7 @@ function Signup() {
         axios.post(`http://localhost:5000/users`,obj)
         .then((res)=>{
             console.log(res.data)
+            dispatch(UserSignup())
             alert("User Registered Successfully")
         })
         .catch((err)=>{

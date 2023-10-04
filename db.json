@@ -17,6 +17,12 @@
       "email": "Deepak@gmail.com",
       "password": "12345",
       "id": 3
+    },
+    {
+      "name": "Deepak",
+      "email": "deepak@gmail.com",
+      "password": "12345",
+      "id": 4
     }
   ]
 }
